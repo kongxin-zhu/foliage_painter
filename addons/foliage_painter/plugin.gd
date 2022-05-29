@@ -331,8 +331,9 @@ func _erase():
 				parent.queue_free()
 	for path in path_list:
 		var layer = get_layer(path)
-		var count = layer.get_child_count()
-		_palette.update_element_number(path,count)
+		if layer:
+			var count = layer.get_child_count()
+			_palette.update_element_number(path,count)
 	#TODO 更新实例的数量
 #	var end_time1 = Time.get_ticks_msec()
 #	var b = end_time1 - end_time
