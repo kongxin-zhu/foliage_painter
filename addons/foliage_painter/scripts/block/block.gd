@@ -57,10 +57,16 @@ func search(position:Vector3,radius:float,path_list:Array[String],is_remove:bool
 
 	
 func update(root_node:Node3D):
+	clear()
 	pass
+	for child in root_node.get_children():
+		for element in child.get_children():
+			add_element(element)
+			
+	
 	
 func clear():
-	pass
+	_nodes.clear()
 
 #获取块编号 
 func _get_block_num(position:Vector3) -> Vector2:

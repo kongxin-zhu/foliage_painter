@@ -491,7 +491,9 @@ func _on_Brush_size_changed():
 	brush.update_size(_palette.brushSize.value)
 
 func _on_update_block_data():
-	block.print_all_block()
+#	block.print_all_block()
+	if foliage:
+		block.update(foliage)
 
 func _verify_element(fpath):
 	# Check it can be loaded
@@ -566,6 +568,7 @@ func foliage_mode():
 	readd_element()
 	_palette.set_visible(true)
 	show_brush(true)
+	block.update(foliage)
 #	set_physics_process(true)
 
 #切换工具时重新给面板赋值
